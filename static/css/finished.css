@@ -1,0 +1,54 @@
+body{
+    background-image: url("../pics/quiz_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    width:100%;
+    height:100vh;
+}
+
+.title{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.finished{
+    width: 600px;
+    height: 600px;
+    background: #fff;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0px 20px 20px;
+    color: #333;
+}
+
+.finished h1{
+    font-size: 60px;
+}
+
+.finished p{
+    font-size: 40px;
+}
+
+.finished button{
+    margin-top: 30px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

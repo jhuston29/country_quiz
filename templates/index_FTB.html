@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries & Capitals Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='pics/globe.png') }}" type="image/icon type">
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+    <script>
+    let real_answer = "{{ answer }}";
+    let hide_name = "{{ hide }}";
+    </script>
+</head>
+<body>
+<div class="flex_container">
+    <div class="home_btn"><button type="button" class="home" onclick=document.location.href="/"></button></div>
+    <div class="clockdiv" id="clockdiv"><span class="minutes"></span><h class="colon">:</h><span class="seconds"></span></div>
+    <div class="title"><span>What is the {{ title }}?</span></div>
+    <div class="q_tracker"><span>{{ index }}/{{ quiz_len }}</span></div>
+</div>
+    <div class="question">
+    <center><h3 id="question">{{ question }}</h3></center>
+        <center><picture>
+        <img src="static/pics/countries/mexico.png">
+        </picture></center><br>
+        <center><form name="guess" id="guess" action="#" onsubmit="{event.preventDefault()}" method="POST">
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" autofocus="autofocus">
+            <button type="submit" onclick=checkAnswer(form.answer.value,real_answer)>Submit</button><br>
+        </form></center>
+    </div>
+        <div class="right_popup" id="right">
+        <h1>You're Right!</h1>
+    </div>
+    <div class="wrong_popup" id="wrong">
+        <h1>Incorrect! Try Again!</h1>
+    </div>
+</body>
+    <script src="{{ url_for('static', filename='js/popup.js') }}"></script>
+    <script>
+    const stop_date = "{{ date }}";
+    let clock_display = "{{ clock_display }}"
+    clock_display = StrToBool(clock_display)
+    checkClockDisplay(clock_display,stop_date)
+    let question = document.getElementById("question")
+    if (hide_name=="True"){
+        question.style.visibility="hidden";
+    }
+    </script>
+</html>

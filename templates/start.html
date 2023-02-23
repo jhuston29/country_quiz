@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries & Capitals Quiz</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/start.css') }}">
+     <link rel="icon" href="{{ url_for('static', filename='pics/globe.png') }}" type="image/icon type">
+</head>
+<body>
+    <div class="menu" id="menu">
+            <div class="title" id="title">
+                <h1><center>Countries & Capitals Quiz</center></h1><br><br>
+            </div>
+            <form name="start_form" id="start_form" method="post">
+                <center><button type="button" class="btn" name="start_btn" value="start_btn" onclick="startQuiz()">Start</button></center>
+                <center><button type="button" class="btn" name="options" value="options" onclick=openOptions()>Options</button></center>
+                <center><input name="start" id="start" type="hidden"></center>
+                <div class="options" id="options">
+                    <h2>Options:</h2>
+                    <div class="region">
+                        <label for="region">Choose a Region:</label>
+                        <select name="region" id="region">
+                            <option value="North America">North America</option>
+                            <option value="South America">South America</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Oceania">Oceania</option>
+                            <option value="All" selected>All Regions</option>
+                        </select>
+                    </div>
+                    <div class="time">
+                        <label for="time">Choose a Time Limit:</label>
+                        <select name="time" id="time">
+                            <option value="unlimited">No Time</option>
+                            <option value="1">1 Minute</option>
+                            <option value="2">2 Minutes</option>
+                            <option value="3">3 Minutes</option>
+                            <option value="4">4 Minutes</option>
+                            <option value="5">5 Minutes</option>
+                            <option value="6">6 Minutes</option>
+                            <option value="7">7 Minutes</option>
+                            <option value="8">8 Minutes</option>
+                            <option value="9">9 Minutes</option>
+                            <option value="10">10 Minutes</option>
+                            <option value="11">11 Minutes</option>
+                            <option value="12">12 Minutes</option>
+                            <option value="13">13 Minutes</option>
+                            <option value="14">14 Minutes</option>
+                            <option value="15">15 Minutes</option>
+                        </select>
+                    </div>
+                    <div class="slider_switch">
+                            <p>Capitals</p>
+                            <label class="switch" id="switch">
+                            <input type="checkbox" name="slider_checkbox" id="slider_checkbox">
+                            <span class="slider round" id="slider"></span>
+                            </label>
+                            <p>Countries</p>
+                    </div>
+                    <div class="checkbox">
+                            <label class="hide" id="hide">
+                            <input type="checkbox" name="hide_checkbox" id="hide_checkbox">
+                            </label>
+                            <p>Hide Country/Capital Name</p>
+                    </div>
+                    <div class="quiz_type">
+                            <input type="radio" id="FTB" name="type" value="FTB" checked>
+                            <label for="FTB">Fill in the Blank</label>
+                            <input type="radio" id="MC" name="type" value="MC">
+                            <label for="MC">Multiple Choice</label>
+                    </div><br>
+                    <button type="button" name="options_btn" id="options_btn" class="button" onclick="closeOptions()">OK</button>
+                </div>
+            </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/options.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</body>
+</html>

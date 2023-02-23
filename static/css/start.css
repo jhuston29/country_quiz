@@ -1,0 +1,208 @@
+body{
+    background-image: url("../pics/start_background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    width:100%;
+    height:100vh;
+    border: 10px solid black;
+    box-sizing: border-box;
+    }
+
+h1{
+    font-family: Georgia;
+    font-size: 65px;
+}
+
+.title img{
+    display: flex;
+    margin-top: -78px;
+}
+
+.btn{
+    margin-bottom: 50px;
+    width: 400px;
+    background-color: transparent;
+    font-size: 40px;
+    font-weight: 500;
+    color: black;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 60px;
+    border-color: black;
+    box-shadow: 5px 5px 10px black;
+}
+
+.btn:hover {
+      background-color:#519239;
+      transition: 0.5s;
+}
+
+.options{
+    width: 800px;
+    height: 550px;
+    background: #FFFACD;
+    border-radius: 6px;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0px 30px 30px;
+    color: #333;
+    visibility: hidden;
+}
+
+.options h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin: 20px 0px 0px;
+    align-items: center;
+}
+
+.region{
+    margin-top: 40px;
+}
+
+.region label{
+    font-size: 25px;
+}
+
+.region select{
+    font-size: 20px;
+}
+
+.time{
+    margin-top: 40px;
+}
+
+.time label{
+    font-size: 25px;
+}
+
+.time select{
+    font-size: 20px;
+}
+
+.slider_switch{
+    margin-top: 15px;
+}
+
+.slider_switch p{
+    display: inline-block;
+    font-size: 25px;
+    position: relative;
+    top: 0px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  margin-top: 0px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: -10px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #519239;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+input:checked + .slider {
+  background-color: #519239;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #519239;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.checkbox input{
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox p{
+  margin-top: 15px;
+  display: inline-block;
+  font-size: 25px;
+}
+
+.hide {
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.quiz_type {
+  margin-top: 15px;
+  position: relative;
+  display: inline-block;
+  font-size: 25px;
+}
+
+.quiz_type input{
+  height: 20px;
+  width: 20px;
+}
+
+#options_btn{
+    width: 10%;
+    margin-top: 40px;
+    padding: 10px 0;
+    background: #b6b8b5;
+    color: #fff;
+    border: 10;
+    outline: none;
+    font-size: 20px;
+    border-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}

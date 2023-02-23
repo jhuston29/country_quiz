@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries & Capitals Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/finished.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='pics/globe.png') }}" type="image/icon type">
+</head>
+<body>
+    <center><div class="finished">
+        <h1>Congratulations!</h1>
+        <p>Quiz Duration: {{ elapsed_time }} seconds</p>
+        <button type="button" name="retry">Retry</button><br>
+        <button type="button" name="home" onclick=document.location.href="/">Home</button>
+    </div></center>
+</body>
+</html>

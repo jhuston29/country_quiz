@@ -1,0 +1,151 @@
+body{
+    background-image: url("../pics/quiz_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100;
+    height:100vh;
+    overflow: hidden
+}
+
+.flex_container{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 30px;
+}
+
+.home_btn{
+    width: 200px;
+    text-align: center;
+}
+
+.home{
+    background: url("../pics/home_icon.png");
+    background-size: cover;
+    background-color: #cccccc;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.clockdiv{
+    font-family: sans-serif;
+    font-style: italic;
+    color: #000000;
+    font-weight: 100;
+    font-size: 60px;
+    visibility: visible;
+    width: 150px;
+    text-align: center;
+}
+
+.title{
+    color: black;
+    font-weight: 100;
+    font-size: 80px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.q_tracker{
+    font-family: sans-serif;
+    font-style: italic;
+    color: #000000;
+    font-weight: 100;
+    font-size: 60px;
+    width: 350px;
+}
+
+h3{
+    color: black;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.question img{
+    border-style: solid;
+    border-color: black;
+    width: 800px;
+    height: 450px;
+}
+
+.question form{
+    font-size: 30px;
+}
+
+.question input{
+    font-size: 25px;
+}
+
+.question button{
+    font-size: 25px;
+}
+
+.wrong_popup{
+    width: 600px;
+    height: 120px;
+    background: #fff;
+    border-radius: 6px;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0px 20px 20px;
+    color: #333;
+    visibility: hidden;
+}
+
+.wrong_popup h1{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: red;
+}
+
+.right_popup{
+    width: 600px;
+    height: 120px;
+    background: #fff;
+    border-radius: 6px;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0px 20px 20px;
+    color: #333;
+    visibility: hidden;
+}
+
+.right_popup h1{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: green;
+}
+
+.MC{
+    margin-bottom: 20px;
+}
+
+.MC input{
+    width: 20px;
+    height: 20px;
+}
+
+.first_col_lab{
+    margin-right: 20px;
+}
+
+
+
+
+
