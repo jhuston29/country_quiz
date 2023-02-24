@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET','POST'])
 def home():
-    global countries_capitals, final_date, final_time, clock_display, switch, hide_name, divide, option1, title, start_time, type, full_list, index, quiz_len, option5, choice1, choice2, choice3, choice4
+    global countries_capitals, final_date, final_time, clock_display, switch, hide_name, divide, option1, title, start_time, type, full_list, index, quiz_len, correct_answers, option5, choice1, choice2, choice3, choice4
     option1 = request.form.get('region')
     option2 = request.form.get('time')
     option3 = request.form.get('slider_checkbox')
@@ -41,6 +41,7 @@ def home():
 
     if "start" in request.form:
         index = 1;
+        correct_answers = 0;
         countries_capitals = txt_to_list(file_path)
         full_list = countries_capitals
         if divide:
@@ -53,9 +54,8 @@ def home():
 
 @app.route("/Quiz")
 def quiz():
-    global index, choice1, choice2, choice3, choice4, quiz_len
+    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers
     if option5 == "MC" and index == 1:
-
         choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
     if len(countries_capitals) == 0:
         end_time = timer();
@@ -66,9 +66,8 @@ def quiz():
     if switch:
         current_q = question[1]
         current_a = question[0]
-    print(current_a)
     index += 1;
-    print(index-1)
+    print(f"Current Question: {index-1}")
     if option5 == "MC":
         if current_a != choice1 and current_a != choice2 and current_a != choice3 and current_a != choice4:
             int = random.randint(1,4)
@@ -90,17 +89,20 @@ def quiz():
 @app.route("/Quiz", methods=['GET', 'POST'])
 def get_input():
     guess = request.form.get('answer')
-    guess = guess.strip()
+    if guess != None:
+        guess = guess.strip()
     return compare(guess)
 
 def compare(guess):
-    global choice1, choice2, choice3, choice4
+    global choice1, choice2, choice3, choice4, correct_answers
     current_answer = get_current_a(countries_capitals,switch)
     is_correct = check_answer(current_answer, guess)
+    countries_capitals.pop(0)
     if is_correct:
-        countries_capitals.pop(0)
-        if option5 == "MC":
-            choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
+        correct_answers +=1
+    if option5 == "MC":
+        choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
+    print(f"Correct Answers: {correct_answers}")
     return quiz()
 
 

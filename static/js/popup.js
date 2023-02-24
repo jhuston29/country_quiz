@@ -2,6 +2,7 @@ let input = document.getElementById("answer");
 let guess_form = document.getElementById("guess");
 let wrong = document.getElementById("wrong");
 let right = document.getElementById("right");
+let okay_btn = document.getElementById("okay");
 
 function openRight(){
     right.style.visibility='visible';
@@ -16,11 +17,12 @@ function closeRight(){
 
 function openWrong(){
     wrong.style.visibility='visible';
-    setTimeout(closeWrong, 500);
 }
 
 function closeWrong(){
     wrong.style.visibility = 'hidden';
+    guess_form.setAttribute("onSubmit", "");
+    guess_form.submit();
 }
 
 function checkAnswer(answer,real_answer){
@@ -30,5 +32,7 @@ function checkAnswer(answer,real_answer){
         openRight();
     } else{
         openWrong();
+        input.autofocus=false;
+        okay_btn.focus();
     }
 }
