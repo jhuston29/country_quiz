@@ -39,14 +39,173 @@ Venezuela | Caracas | 2
 
 ###### Europe ######
 Albania | Tirana | 3
-
-
-
-
-
+Andorra | Andorra la Vella | 3
+Austria | Vienna | 3
+Belarus | Minsk | 3
+Belgium | Brussels | 3
+Bosnia and Herzegovina | Sarajevo | 3
+Bulgaria | Sofia | 3
+Croatia | Zagreb | 3
+Cyprus | Nicosia | 3
+Czech Republic | Prague | 3
+Denmark | Copenhagen | 3
+Estonia | Tallinn | 3
+Finland | Helsinki | 3
+France | Paris | 3
+Germany | Berlin | 3
+Greece | Athens | 3
+Hungary | Budapest | 3
+Iceland | Reykjavik | 3
+Ireland | Dublin | 3
+Italy | Rome | 3
+Latvia | Riga | 3
+Liechtenstein | Vaduz | 3
+Lithuania | Vilnius | 3
+Luxembourg | Luxembourg City | 3
+Malta | Valletta | 3
+Moldova | Chisinau | 3
+Monaco | Monaco | 3
+Montenegro | Podgorica | 3
+Netherlands | Amsterdam | 3
+North Macedonia | Skopje | 3
+Norway | Oslo | 3
+Poland | Warsaw | 3
+Portugal | Lisbon | 3
+Romania | Bucharest | 3
+Russia | Moscow | 3
+San Marino | San Marino | 3
+Serbia | Belgrade | 3
+Slovakia | Bratislava | 3
+Slovenia | Ljubljana | 3
+Spain | Madrid | 3
+Sweden | Stockholm | 3
+Switzerland | Bern | 3
+Turkey | Ankara | 3
+Ukraine | Kyiv | 3
+United Kingdom | London | 3
+Vatican City | Vatican City | 3
 
 ###### Asia ######
+Afghanistan | Kabul | 4
+Armenia | Yerevan | 4
+Azerbaijan | Baku | 4
+Bahrain | Manama | 4
+Bangladesh | Dhaka | 4
+Bhutan | Thimphu | 4
+Brunei | Bandar Seri Begawan | 4
+Cambodia | Phnom Penh | 4
+China | Beijing | 4
+Georgia | Tbilisi | 4
+India | New Delhi | 4
+Indonesia | Jakarta | 4
+Iran | Tehran | 4
+Iraq | Baghdad | 4
+Israel | Jerusalem | 4
+Japan | Tokyo | 4
+Jordan | Amman | 4
+Kazakhstan | Nur-Sultan | 4
+Kuwait | Kuwait City | 4
+Kyrgyzstan | Bishkek | 4
+Laos | Vientiane | 4
+Lebanon | Beirut | 4
+Malaysia | Kuala Lumpur | 4
+Maldives | Male | 4
+Mongolia | Ulaanbaatar | 4
+Myanmar | Naypyidaw | 4
+Nepal | Kathmandu | 4
+North Korea | Pyongyang | 4
+Oman | Muscat | 4
+Pakistan | Islamabad | 4
+Philippines | Manila | 4
+Qatar | Doha | 4
+Russia | Moscow | 4
+Saudi Arabia | Riyadh | 4
+Singapore | Singapore | 4
+South Korea | Seoul | 4
+Sri Lanka | Sri Jayawardenepura Kotte | 4
+State of Palestine | Ramallah | 4
+Syria | Damascus | 4
+Taiwan | Taipei | 4
+Tajikistan | Dushanbe | 4
+Thailand | Bangkok | 4
+Timor-Leste | Dili | 4
+Turkey | Ankara | 4
+Turkmenistan | Ashgabat | 4
+United Arab Emirates | Abu Dhabi | 4
+Uzbekistan | Tashkent | 4
+Vietnam | Hanoi | 4
+Yemen | Sana'a | 4
 
 ###### Africa ######
+Algeria | Algiers | 5
+Angola | Luanda | 5
+Benin | Porto-Novo | 5
+Botswana | Gaborone | 5
+Burkina Faso | Ouagadougou | 5
+Burundi | Gitega | 5
+Cabo Verde | Praia | 5
+Cameroon | Yaounde | 5
+Central African Republic | Bangui | 5
+Chad | N'Djamena | 5
+Comoros | Moroni | 5
+Côte d'Ivoire | Yamoussoukro | 5
+Democratic Republic of the Congo | Kinshasa | 5
+Djibouti | Djibouti | 5
+Egypt | Cairo | 5
+Equatorial Guinea | Malabo | 5
+Eritrea | Asmara | 5
+Eswatini | Mbabane | 5
+Ethiopia | Addis Ababa | 5
+Gabon | Libreville | 5
+The Gambia | Banjul | 5
+Ghana | Accra | 5
+Guinea | Conakry | 5
+Guinea-Bissau | Bissau | 5
+Kenya | Nairobi | 5
+Lesotho | Maseru | 5
+Liberia | Monrovia | 5
+Libya | Tripoli | 5
+Madagascar | Antananarivo | 5
+Malawi | Lilongwe | 5
+Mali | Bamako | 5
+Mauritania | Nouakchott | 5
+Mauritius | Port Louis | 5
+Mayotte | Mamoudzou | 5
+Morocco | Rabat | 5
+Mozambique | Maputo | 5
+Namibia | Windhoek | 5
+Niger | Niamey | 5
+Nigeria | Abuja | 5
+Repulic of the Congo | Brazzaville | 5
+Réunion | Saint-Denis | 5
+Rwanda | Kigali | 5
+Sao Tome & Principe | Sao Tome | 5
+Senegal | Dakar | 5
+Seychelles | Victoria | 5
+Sierra Leone | Freetown | 5
+Somalia | Mogadishu | 5
+South Africa | Pretoria | 5
+South Sudan | Juba | 5
+Sudan | Khartoum | 5
+Tanzania | Dodoma | 5
+Togo | Lome | 5
+Tunisia | Tunis | 5
+Uganda | Kampala | 5
+Zambia | Lusaka | 5
+Zimbabwe | Harare | 5
 
 ###### Oceania ######
+Australia | Canberra | 6
+Fiji | Suva | 6
+Kiribati | Tarawa | 6
+Marshall Islands | Majuro | 6
+Micronesia | Palikir | 6
+Nauru | Yaren | 6
+New Zealand | Wellington | 6
+Palau | Ngerulmud | 6
+Papua New Guinea | Port Moresby | 6
+Samoa | Apia | 6
+Solomon Islands | Honiara | 6
+Tonga | Nuku'alofa | 6
+Tuvalu | Funafuti | 6
+Vanuatu | Port Vila | 6
