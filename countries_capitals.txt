@@ -21,7 +21,7 @@ Saint Kitts and Nevis | Basseterre| 1
 Saint Lucia | Castries | 1
 Saint Vincent and the Grenadines | Kingstown | 1
 Trinidad and Tobago | Port of Spain | 1
-United States | Washington DC | 1
+United States | Washington D.C. | 1
 
 ###### South America ######
 Argentina | Buenos Aires | 2

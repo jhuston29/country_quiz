@@ -3,6 +3,7 @@ let guess_form = document.getElementById("guess");
 let wrong = document.getElementById("wrong");
 let right = document.getElementById("right");
 let okay_btn = document.getElementById("okay");
+const apost = '&#39;';
 
 function openRight(){
     right.style.visibility='visible';
@@ -28,6 +29,9 @@ function closeWrong(){
 function checkAnswer(answer,real_answer){
     var Answer = answer.trim();
     var Real_answer = real_answer;
+    if (Real_answer.match(apost)){
+        Real_answer = Real_answer.replace(apost,"'")
+        }
     if (Answer == Real_answer || Answer == Real_answer.toLowerCase()){
         openRight();
     } else{

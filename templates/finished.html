@@ -8,10 +8,13 @@
 </head>
 <body>
     <center><div class="finished">
-        <h1>Congratulations!</h1>
-        <p>Quiz Duration: {{ elapsed_time }} seconds</p>
-        <button type="button" name="retry">Retry</button><br>
-        <button type="button" name="home" onclick=document.location.href="/">Home</button>
+        <form name="end_form" id="end_form" method="post">
+            <h1>Congratulations!</h1>
+            <p>Quiz Duration: {{ elapsed_time }} seconds</p>
+            <button type="button" name="retry_btn">Retry</button><br>
+            <input name="retry" id="retry" type="hidden">
+            <button type="button" name="home" onclick=document.location.href="/">Home</button>
+        </form>
     </div></center>
 </body>
 </html>

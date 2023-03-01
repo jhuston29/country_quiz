@@ -1,6 +1,6 @@
 import os, random, math
 from flask import Flask, render_template, url_for, request, redirect
-from main import txt_to_list, get_current_datetime, get_final_time, get_current_a, check_answer, divideList, timer, getMC_choices
+from main import txt_to_list, get_current_datetime, get_final_time, get_current_a, check_answer, divideList, timer, getMC_choices, removeDups
 
 directory = os.getcwd()
 input_file = "countries_capitals.txt"
@@ -38,16 +38,19 @@ def home():
     else:
         hide_name = "False"
 
-
     if "start" in request.form:
         index = 1;
         correct_answers = 0;
         countries_capitals = txt_to_list(file_path)
         full_list = countries_capitals
+        print(len(full_list))
         if divide:
             countries_capitals = divideList(countries_capitals, option1)
+        if option1 == "All":
+            countries_capitals = removeDups(countries_capitals)
         random.shuffle(countries_capitals)
         quiz_len = len(countries_capitals)
+        print(quiz_len)
         start_time = timer();
         return redirect(url_for("quiz"))
     return render_template('start.html')
@@ -60,14 +63,15 @@ def quiz():
     if len(countries_capitals) == 0:
         end_time = timer();
         elapsed_time = math.floor(end_time - start_time);
-        return render_template('finished.html', elapsed_time=elapsed_time)
+        return redirect(url_for("finished"))
+
     question = countries_capitals[0]
     current_q, current_a, region = question[0], question[1], question[2]
     if switch:
         current_q = question[1]
         current_a = question[0]
     index += 1;
-    print(f"Current Question: {index-1}")
+    #print(f"Current Question: {index-1}")
     if option5 == "MC":
         if current_a != choice1 and current_a != choice2 and current_a != choice3 and current_a != choice4:
             int = random.randint(1,4)
@@ -102,9 +106,13 @@ def compare(guess):
         correct_answers +=1
     if option5 == "MC":
         choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
-    print(f"Correct Answers: {correct_answers}")
+    #print(f"Correct Answers: {correct_answers}")
     return quiz()
 
+@app.route("/Quiz/Results", methods=['GET', 'POST'])
+def finished():
+    if len(countries_capitals) == 0:
+        return render_template('finished.html')
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8080, debug=True)

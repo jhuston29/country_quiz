@@ -56,6 +56,20 @@ def divideList(list,option):
         new_list = [x for x in quiz_list if '6' in x[2]]
         return new_list
 
+def removeDups(list):
+    no_dups = list
+    new_list = [i[0] for i in list];
+    oc_set = set()
+    indices = []
+    for idx, val in enumerate(new_list):
+        if val not in oc_set:
+            oc_set.add(val)
+        else:
+            indices.append(idx)
+    for i in indices:
+        no_dups.pop(i)
+    return no_dups
+
 def timer():
     current_time = time.time()
     return current_time
