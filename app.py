@@ -5,66 +5,66 @@ from main import txt_to_list, get_current_datetime, get_final_time, get_current_
 directory = os.getcwd()
 input_file = "countries_capitals.txt"
 file_path = os.path.join(directory, input_file)
+retry = False;
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET','POST'])
 def home():
-    global countries_capitals, final_date, final_time, clock_display, switch, hide_name, divide, option1, title, start_time, type, full_list, index, quiz_len, correct_answers, option5, choice1, choice2, choice3, choice4
-    option1 = request.form.get('region')
-    option2 = request.form.get('time')
-    option3 = request.form.get('slider_checkbox')
-    option4 = request.form.get('hide_checkbox')
-    option5 = request.form.get('type')
+    global countries_capitals, final_date, final_time, clock_display, switch, hide_name, divide, retry, option1, option2, option3, option4, option5, title, start_time, type, full_list, index, quiz_len, correct_answers, choice1, choice2, choice3, choice4
+    if not retry:
+        option1 = request.form.get('region');
+        option2 = request.form.get('time');
+        option3 = request.form.get('slider_checkbox');
+        option4 = request.form.get('hide_checkbox');
+        option5 = request.form.get('type');
     if option1 != "All":
         divide = True;
     else:
         divide = False;
     if option2 == "unlimited" or option2 == None:
-        clock_display = "false"
-        final_time = 0
+        clock_display = "false";
+        final_time = 0;
     else:
-        clock_display = "true"
-        final_date = get_current_datetime()
-        final_time = get_final_time(int(option2), final_date)
+        clock_display = "true";
+        final_date = get_current_datetime();
+        final_time = get_final_time(int(option2), final_date);
     if option3 == "on":
         switch = True;
-        title = "Country"
+        title = "Country";
     else:
         switch = False;
-        title = "Capital"
+        title = "Capital";
     if option4 == "on":
         hide_name = "True";
     else:
-        hide_name = "False"
+        hide_name = "False";
 
-    if "start" in request.form:
+    if "start" in request.form or retry:
+        retry = False;
         index = 1;
         correct_answers = 0;
         countries_capitals = txt_to_list(file_path)
         full_list = countries_capitals
-        print(len(full_list))
         if divide:
             countries_capitals = divideList(countries_capitals, option1)
         if option1 == "All":
             countries_capitals = removeDups(countries_capitals)
         random.shuffle(countries_capitals)
         quiz_len = len(countries_capitals)
-        print(quiz_len)
         start_time = timer();
         return redirect(url_for("quiz"))
     return render_template('start.html')
 
 @app.route("/Quiz")
 def quiz():
-    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers
+    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers, elapsed_time, countries_capitals
     if option5 == "MC" and index == 1:
         choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
     if len(countries_capitals) == 0:
         end_time = timer();
         elapsed_time = math.floor(end_time - start_time);
         return redirect(url_for("finished"))
-
     question = countries_capitals[0]
     current_q, current_a, region = question[0], question[1], question[2]
     if switch:
@@ -111,8 +111,11 @@ def compare(guess):
 
 @app.route("/Quiz/Results", methods=['GET', 'POST'])
 def finished():
-    if len(countries_capitals) == 0:
-        return render_template('finished.html')
+    global elapsed_time, retry
+    if "retry" in request.form:
+        retry = True
+        return redirect(url_for("home"))
+    return render_template('finished.html', elapsed_time=elapsed_time)
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8080, debug=True)
