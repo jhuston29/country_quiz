@@ -6,12 +6,13 @@ directory = os.getcwd()
 input_file = "countries_capitals.txt"
 file_path = os.path.join(directory, input_file)
 retry = False;
+game_over = False;
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET','POST'])
 def home():
-    global countries_capitals, final_date, final_time, clock_display, switch, hide_name, divide, retry, option1, option2, option3, option4, option5, title, start_time, type, full_list, index, quiz_len, correct_answers, choice1, choice2, choice3, choice4
+    global countries_capitals, final_date, final_time, clock_display, switch, hide_name, divide, retry, game_over, option1, option2, option3, option4, option5, title, start_time, type, full_list, index, quiz_len, correct_answers, choice1, choice2, choice3, choice4
     if not retry:
         option1 = request.form.get('region');
         option2 = request.form.get('time');
@@ -28,7 +29,7 @@ def home():
     else:
         clock_display = "true";
         final_date = get_current_datetime();
-        final_time = get_final_time(int(option2), final_date);
+        final_time = get_final_time(float(option2), final_date);
     if option3 == "on":
         switch = True;
         title = "Country";
@@ -42,6 +43,7 @@ def home():
 
     if "start" in request.form or retry:
         retry = False;
+        game_over = False;
         index = 1;
         correct_answers = 0;
         countries_capitals = txt_to_list(file_path)
@@ -58,10 +60,14 @@ def home():
 
 @app.route("/Quiz")
 def quiz():
-    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers, elapsed_time, countries_capitals
+    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers, elapsed_time, countries_capitals, game_over, check_time
     if option5 == "MC" and index == 1:
         choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
-    if len(countries_capitals) == 0:
+    check_time = timer()
+    if clock_display == "true":
+        if math.floor(check_time-start_time) >= float(option2):
+            game_over = True
+    if len(countries_capitals) == 0 or game_over:
         end_time = timer();
         elapsed_time = math.floor(end_time - start_time);
         return redirect(url_for("finished"))
@@ -111,9 +117,10 @@ def compare(guess):
 
 @app.route("/Quiz/Results", methods=['GET', 'POST'])
 def finished():
-    global elapsed_time, retry
+    global elapsed_time, retry, check_time
     if "retry" in request.form:
         retry = True
+        del check_time
         return redirect(url_for("home"))
     return render_template('finished.html', elapsed_time=elapsed_time)
 

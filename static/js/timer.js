@@ -1,12 +1,13 @@
-
 function getTimeRemaining(endtime) {
   const total = Date.parse(endtime) - Date.parse(new Date());
+  const total_sec = Math.floor(total/1000);
   const seconds = Math.floor((total / 1000) % 60);
   const minutes = Math.floor((total / 1000 / 60) % 60);
   return {
     total,
     minutes,
-    seconds
+    seconds,
+    total_sec
   };
 }
 
@@ -19,14 +20,14 @@ function initializeClock(id, endtime) {
     const t = getTimeRemaining(endtime);
     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 31000) {
+    if (t.total_sec <= 30) {
       clock.style.color = 'red';
     }
-    if (t.total <= 0) {
+    if (t.total_sec <= 0) {
       clearInterval(timeinterval);
       minutesSpan.innerHTML = '00'
       secondsSpan.innerHTML = '00'
+      location.reload();
     }
   }
 
@@ -52,9 +53,3 @@ function checkClockDisplay(clock_display,stop_date){
     initializeClock("clockdiv", stop_date);
     }
 }
-
-
-
-
-
-
