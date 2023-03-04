@@ -4,24 +4,24 @@ Bahamas | Nassau | 1
 Barbados | Bridgetown | 1
 Belize | Belmopan | 1
 Canada | Ottawa | 1
-#Costa Rica | San Jose | 1
-#Cuba | Havana | 1
-#Dominica | Roseau | 1
-#Dominican Republic | Santo Domingo | 1
-#El Salvador | San Salvador | 1
-#Grenada | Saint Georges | 1
-#Guatemala | Guatemala City | 1
-#Haiti | Port-au-Prince | 1
-#Honduras | Tegucigalpa | 1
-#Jamaica | Kingston | 1
-#Mexico | Mexico City | 1
-#Nicaragua | Managua | 1
-#Panama | Panama City | 1
-#Saint Kitts and Nevis | Basseterre| 1
-#Saint Lucia | Castries | 1
-#Saint Vincent and the Grenadines | Kingstown | 1
-#Trinidad and Tobago | Port of Spain | 1
-#United States | Washington D.C. | 1
+Costa Rica | San Jose | 1
+Cuba | Havana | 1
+Dominica | Roseau | 1
+Dominican Republic | Santo Domingo | 1
+El Salvador | San Salvador | 1
+Grenada | Saint Georges | 1
+Guatemala | Guatemala City | 1
+Haiti | Port-au-Prince | 1
+Honduras | Tegucigalpa | 1
+Jamaica | Kingston | 1
+Mexico | Mexico City | 1
+Nicaragua | Managua | 1
+Panama | Panama City | 1
+Saint Kitts and Nevis | Basseterre| 1
+Saint Lucia | Castries | 1
+Saint Vincent and the Grenadines | Kingstown | 1
+Trinidad and Tobago | Port of Spain | 1
+United States | Washington D.C. | 1
 
 ###### South America ######
 Argentina | Buenos Aires | 2
