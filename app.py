@@ -60,15 +60,16 @@ def home():
 
 @app.route("/Quiz")
 def quiz():
-    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers, elapsed_time, countries_capitals, game_over, check_time, clock_display
+    global index, choice1, choice2, choice3, choice4, quiz_len, correct_answers, percentage, elapsed_time, countries_capitals, game_over, check_time, clock_display
     check_time = timer()
     if clock_display == "true":
         if math.floor(check_time-start_time) >= math.floor(float(option2)*60):
             game_over = True
-            print("GAME OVER")
     if len(countries_capitals) == 0 or game_over:
         #print(correct_answers,'/',quiz_len)
-        print(correct_answers,'/',index-1)
+        print(correct_answers,'/',index-1) #Correct answers out of attempted questions
+        percentage = round(correct_answers/quiz_len * 100, 1);
+        print(percentage)
         end_time = timer();
         elapsed_time = math.floor(end_time - start_time);
         return redirect(url_for("finished"))
@@ -101,7 +102,6 @@ def quiz():
 
 @app.route("/Quiz", methods=['GET', 'POST'])
 def get_input():
-    print("INPUT")
     guess = request.form.get('answer')
     if guess != None:
         guess = guess.strip()
@@ -109,15 +109,11 @@ def get_input():
 
 def compare(guess):
     global choice1, choice2, choice3, choice4, correct_answers, countries_capitals, game_over, check_time, start_time
-    print(game_over)
-    print(check_time-start_time)
     current_answer = get_current_a(countries_capitals, switch)
     is_correct = check_answer(current_answer, guess)
     countries_capitals.pop(0)
-    print(current_answer)
     if is_correct:
         correct_answers +=1
-        print("CORRECT")
     if option5 == "MC":
         choice1, choice2, choice3, choice4 = getMC_choices(full_list, switch)
     #print(f"Correct Answers: {correct_answers}")
@@ -125,12 +121,12 @@ def compare(guess):
 
 @app.route("/Quiz/Results", methods=['GET', 'POST'])
 def finished():
-    global elapsed_time, retry, check_time
+    global elapsed_time, retry, check_time, correct_answers, quiz_len, percentage
     if "retry" in request.form:
         retry = True
         del check_time
         return redirect(url_for("home"))
-    return render_template('finished.html', elapsed_time=elapsed_time)
+    return render_template('finished.html', elapsed_time=elapsed_time, correct_answers=correct_answers, quiz_len=quiz_len, percentage=percentage)
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8080, debug=True)

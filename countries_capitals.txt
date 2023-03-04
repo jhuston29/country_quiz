@@ -1,9 +1,9 @@
 ###### North America ######
 Antigua and Barbuda | Saint Johns | 1
-#Bahamas | Nassau | 1
-#Barbados | Bridgetown | 1
-#Belize | Belmopan | 1
-#Canada | Ottawa | 1
+Bahamas | Nassau | 1
+Barbados | Bridgetown | 1
+Belize | Belmopan | 1
+Canada | Ottawa | 1
 #Costa Rica | San Jose | 1
 #Cuba | Havana | 1
 #Dominica | Roseau | 1

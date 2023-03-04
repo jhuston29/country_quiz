@@ -10,6 +10,7 @@
     <center><div class="finished">
         <form name="end_form" id="end_form" method="post">
             <h1>Quiz Results:</h1>
+            <p>Score: {{ correct_answers }}/{{ quiz_len }} ({{ percentage }}%)</p>
             <p>Quiz Duration: {{ elapsed_time }} seconds</p>
             <button type="submit" name="retry_btn">Retry</button><br>
             <input name="retry" id="retry" type="hidden">
