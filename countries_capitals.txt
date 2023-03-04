@@ -176,7 +176,7 @@ Mozambique | Maputo | 5
 Namibia | Windhoek | 5
 Niger | Niamey | 5
 Nigeria | Abuja | 5
-Repulic of the Congo | Brazzaville | 5
+Republic of the Congo | Brazzaville | 5
 Réunion | Saint-Denis | 5
 Rwanda | Kigali | 5
 Sao Tome & Principe | Sao Tome | 5
