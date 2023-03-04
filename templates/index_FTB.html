@@ -41,7 +41,6 @@
     <script src="{{ url_for('static', filename='js/popup.js') }}"></script>
     <script>
     const stop_date = "{{ date }}";
-    console.log(stop_date)
     let clock_display = "{{ clock_display }}"
     clock_display = StrToBool(clock_display)
     checkClockDisplay(clock_display,stop_date)

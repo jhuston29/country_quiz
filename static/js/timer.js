@@ -1,3 +1,4 @@
+
 function getTimeRemaining(endtime) {
   const total = Date.parse(endtime) - Date.parse(new Date());
   const total_sec = Math.floor(total/1000);
@@ -18,16 +19,20 @@ function initializeClock(id, endtime) {
 
   function updateClock() {
     const t = getTimeRemaining(endtime);
+    if (t.total_sec > 0){
     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    }
     if (t.total_sec <= 30) {
       clock.style.color = 'red';
     }
     if (t.total_sec <= 0) {
-      clearInterval(timeinterval);
       minutesSpan.innerHTML = '00'
       secondsSpan.innerHTML = '00'
-      location.reload();
+      document.getElementById("guess").reset();
+      if (document.getElementById("right").style.visibility!='visible'){
+      document.location.reload();
+      }
     }
   }
 
