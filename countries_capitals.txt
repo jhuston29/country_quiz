@@ -9,7 +9,7 @@ Cuba | Havana | 1
 Dominica | Roseau | 1
 Dominican Republic | Santo Domingo | 1
 El Salvador | San Salvador | 1
-Grenada | Saint Georges | 1
+Grenada | Saint George's | 1
 Guatemala | Guatemala City | 1
 Haiti | Port-au-Prince | 1
 Honduras | Tegucigalpa | 1
