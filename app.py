@@ -82,6 +82,8 @@ def quiz():
         current_a = question[0]
     index += 1;
     print(f"Current Question: {index-1}")
+    country_image = f"{question[0]}.png"
+    #print(country_image)
     if option5 == "MC":
         if current_a != choice1 and current_a != choice2 and current_a != choice3 and current_a != choice4:
             int = random.randint(1,4)
@@ -95,10 +97,10 @@ def quiz():
                 choice4 = current_a
     if option5 == "MC":
         return render_template('index_MC.html', question=current_q, answer=current_a, date=final_time, clock_display=clock_display,
-                               hide=hide_name, title=title, choice1=choice1, choice2=choice2, choice3=choice3, choice4=choice4, index=index-1, quiz_len=quiz_len)
+                               hide=hide_name, title=title, choice1=choice1, choice2=choice2, choice3=choice3, choice4=choice4, index=index-1, quiz_len=quiz_len, country_image=country_image)
     else:
         return render_template('index_FTB.html', question=current_q, answer=current_a, date=final_time, clock_display=clock_display,
-                               hide=hide_name, title=title, index=index-1, quiz_len=quiz_len)
+                               hide=hide_name, title=title, index=index-1, quiz_len=quiz_len, country_image=country_image)
 
 @app.route("/Quiz", methods=['GET', 'POST'])
 def get_input():
