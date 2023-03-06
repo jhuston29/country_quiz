@@ -24,16 +24,26 @@
         <img src="static/pics/countries/{{ country_image }}">
         </picture></center><br>
         <center><form name="guess" id="guess" action="#" onsubmit="{event.preventDefault()}" method="POST">
-          <div class="MC">
-                <input type="radio" class="first_col" id="A" name="answer" value="{{ choice1 }}">
-                <label class="first_col_lab" for="{{ choice1 }}">{{ choice1 }}</label>
-                <input type="radio" class="second_col" id="B" name="answer" value="{{ choice2 }}">
-                <label class="second_col_lab" for="{{ choice2 }}">{{ choice2 }}</label><br>
-                <input type="radio" class="first_col" id="C" name="answer" value="{{ choice3 }}">
-                <label class="first_col_lab" for="{{ choice3 }}">{{ choice3 }}</label>
-                <input type="radio" class="second_col" id="D" name="answer" value="{{ choice4 }}">
-                <label class="second_col_lab" for="{{ choice4 }}">{{ choice4 }}</label><br>
-          </div>
+            <div class="MC" id="first_line">
+                <div class="answer_A">
+                    <input type="radio" id="A" name="answer" value="{{ choice1 }}">
+                    <label for="{{ choice1 }}">{{ choice1 }}</label>
+                </div>
+                <div class="answer_B">
+                    <input type="radio" id="B" name="answer" value="{{ choice2 }}">
+                    <label for="{{ choice2 }}">{{ choice2 }}</label>
+                </div>
+            </div>
+            <div class="MC" id="second_line">
+                <div class="answer_C">
+                    <input type="radio" id="C" name="answer" value="{{ choice3 }}">
+                    <label for="{{ choice3 }}">{{ choice3 }}</label>
+                </div>
+                <div class="answer_D">
+                    <input type="radio" id="D" name="answer" value="{{ choice4 }}">
+                    <label for="{{ choice4 }}">{{ choice4 }}</label>
+                </div>
+            </div>
             <button type="submit" onclick=checkAnswer(form.answer.value,real_answer)>Submit</button><br>
         </form></center>
     </div>
